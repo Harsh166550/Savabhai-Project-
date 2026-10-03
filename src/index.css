@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Cinzel', serif;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Primary Palette requested by user */
+  --color-white: #FFFFFF;
+  --color-warm-white: #F8F7F4;
+  --color-rust: #8E3514;
+  --color-light-gray: #F1F1EF;
+
+  /* Extended shades already used across components */
+  --color-rust-deep: #6E260E;
+  --color-mustard: #D49B28;
+  --color-stone: #767E8C;
+  --color-line: #DDE1E6;
+  --color-line-strong: #CAD0D8;
+  --color-surface-sunken: #ECEEF2;
+
+  /* Semantic surface assignments */
+  --color-surface-bg: #FFFFFF;
+  --color-surface-warm: #F8F7F4;
+  --color-surface-muted: #F8F7F4;
+  --color-surface-elevated: #F1F1EF;
+  
+  /* Borders and dividers */
+  --color-border-subtle: #F1F1EF;
+  --color-border-default: #F1F1EF;
+  --color-border-accent: #8E3514;
+
+  /* Brand and text shades */
+  --color-brand-rust: #8E3514;
+  --color-brand-rust-deep: #8E3514;
+  --color-brand-rust-light: #FAF5F2;
+  --color-brand-warm-white: #F8F7F4;
+  --color-brand-light-gray: #F1F1EF;
+  --color-text-muted: #8E3514;
+  --color-text-body: #8E3514;
+  --color-text-primary: #8E3514;
+}
+
+:root {
+  /* CSS Custom Properties for global access */
+  --color-white: #FFFFFF;
+  --color-warm-white: #F8F7F4;
+  --color-rust: #8E3514;
+  --color-light-gray: #F1F1EF;
+
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F8F7F4;
+  --bg-tertiary: #F1F1EF;
+  --border-primary: #F1F1EF;
+  --text-primary: #8E3514;
+  --text-muted: #8E3514;
+  --accent-rust: #8E3514;
+}
+
+@layer base {
+  * {
+    border-color: #F1F1EF;
+  }
+  body {
+    background-color: #FFFFFF;
+    color: #8E3514;
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+    letter-spacing: -0.015em;
+  }
+}
+
+/* Minimalist scrollbar styled in primary palette */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F8F7F4;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #F1F1EF;
+  border: 1px solid #E5E5E0;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8E3514;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
